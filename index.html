@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ntlafatso Consulting | My Next Chapter</title>
+  <meta name="description" content="Ntlafatso Consulting helps people prepare for life after employment with practical skills such as beekeeping through the My Next Chapter program." />
+
+  <style>
+    :root {
+      --bg: #f7fafc;
+      --bg-alt: #ffffff;
+      --primary: #0f766e;   /* deep teal */
+      --primary-soft: #ccfbf1;
+      --accent: #f59e0b;    /* warm honey gold */
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --border-subtle: #e5e7eb;
+      --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --radius-lg: 18px;
+      --radius-xl: 24px;
+      --radius-pill: 999px;
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #ecfeff, #f9fafb 42%, #fefce8);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page-shell {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* HEADER */
+    header {
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(18px);
+      position: relative;
+      z-index: 20;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8rem 0;
+      gap: 1.5rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      background: radial-gradient(circle at 30% 20%, #fef3c7, #f59e0b);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 18px rgba(245, 158, 11, 0.45);
+      flex-shrink: 0;
+    }
+
+    .brand-logo span {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #1f2933;
+    }
+
+    .brand-text h1 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-text p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      position: relative;
+      padding-bottom: 0.1rem;
+    }
+
+    nav a:hover {
+      color: var(--text-main);
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.2rem;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--primary));
+      border-radius: 999px;
+      transition: width 0.2s ease-out;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .header-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .pill {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-pill);
+      background: #ecfdf5;
+      color: #166534;
+      border: 1px solid #bbf7d0;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1.1rem;
+      border-radius: var(--radius-pill);
+      border: none;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, background 0.12s ease-out;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #064e3b);
+      color: #ecfdf5;
+      box-shadow: 0 10px 22px rgba(15, 118, 110, 0.28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 30px rgba(15, 118, 110, 0.36);
+    }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: #111827;
+    }
+
+    .btn-ghost:hover {
+      background: #f9fafb;
+    }
+
+    .mobile-nav-toggle {
+      display: none;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      border-radius: 999px;
+      padding: 0.4rem 0.7rem;
+      background: white;
+      cursor: pointer;
+    }
+
+    .mobile-nav-toggle span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: #111827;
+      border-radius: 999px;
+      position: relative;
+    }
+
+    .mobile-nav-toggle span::before,
+    .mobile-nav-toggle span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 18px;
+      height: 2px;
+      background: #111827;
+      border-radius: 999px;
+    }
+
+    .mobile-nav-toggle span::before {
+      top: -5px;
+    }
+
+    .mobile-nav-toggle span::after {
+      top: 5px;
+    }
+
+    /* MAIN */
+    main {
+      flex: 1;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 3rem 0 3.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      border-radius: var(--radius-pill);
+      padding: 0.35rem 0.7rem 0.35rem 0.35rem;
+      background: rgba(240, 253, 250, 0.9);
+      border: 1px solid #a7f3d0;
+      font-size: 0.75rem;
+      color: #047857;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-kicker-tag {
+      padding: 0.1rem 0.45rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      background: #ecfeff;
+      color: #0f766e;
+    }
+
+    .hero h2 {
+      font-size: clamp(2rem, 3vw, 2.5rem);
+      line-height: 1.15;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero h2 span.accent {
+      background: linear-gradient(135deg, var(--accent), #f97316);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero p.lead {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      max-width: 34rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-footnote {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .hero-footnote span.dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: var(--radius-xl);
+      padding: 1.4rem 1.3rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.72rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: #fef3c7;
+      color: #92400e;
+      margin-bottom: 0.6rem;
+    }
+
+    .bee-emoji {
+      font-size: 1rem;
+    }
+
+    .hero-card h3 {
+      font-size: 0.98rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin-top: 0.5rem;
+    }
+
+    .metric {
+      padding: 0.55rem 0.7rem;
+      border-radius: 14px;
+      border: 1px dashed rgba(148, 163, 184, 0.6);
+      background: #f9fafb;
+    }
+
+    .metric span.value {
+      display: block;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .metric span.label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    .hero-highlight {
+      position: absolute;
+      inset: auto -30px -40px auto;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(250, 204, 21, 0.3), transparent 60%);
+      pointer-events: none;
+    }
+
+    /* GENERIC SECTIONS */
+    section {
+      padding: 2.5rem 0;
+    }
+
+    .section-header {
+      margin-bottom: 1.6rem;
+      max-width: 40rem;
+    }
+
+    .section-eyebrow {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-description {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    /* BEEKEEPING SECTION */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.03);
+    }
+
+    .card h3 {
+      font-size: 0.98rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .card p {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.7rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      margin-bottom: 0.4rem;
+    }
+
+    .program-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      gap: 1.8rem;
+      align-items: flex-start;
+    }
+
+    .program-list {
+      list-style: none;
+      display: grid;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .program-list li {
+      font-size: 0.86rem;
+      padding: 0.55rem 0.65rem;
+      border-radius: 10px;
+      background: #f9fafb;
+      border: 1px dashed rgba(148, 163, 184, 0.5);
+    }
+
+    .program-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.7rem;
+    }
+
+    .program-card {
+      background: #fffbeb;
+      border-radius: var(--radius-xl);
+      padding: 1.1rem 1rem;
+      border: 1px solid #f97316;
+      box-shadow: 0 12px 25px rgba(248, 181, 0, 0.25);
+    }
+
+    .program-card h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .program-card p {
+      font-size: 0.84rem;
+      color: #92400e;
+    }
+
+    .program-stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.5rem;
+      margin-top: 0.8rem;
+    }
+
+    .pill-small {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    /* ORGS SECTION */
+    .org-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.6rem;
+    }
+
+    .org-card {
+      background: var(--bg-alt);
+      border-radius: var(--radius-xl);
+      padding: 1.2rem 1.1rem;
+      border: 1px solid #d1d5db;
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.05);
+    }
+
+    .org-list {
+      list-style: none;
+      display: grid;
+      gap: 0.45rem;
+      font-size: 0.86rem;
+      margin: 0.6rem 0 0.9rem;
+    }
+
+    .org-list li::before {
+      content: "•";
+      color: var(--accent);
+      margin-right: 0.4rem;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .quote-card {
+      background: #ecfdf5;
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      border: 1px solid #a7f3d0;
+      font-size: 0.86rem;
+      color: #065f46;
+    }
+
+    .quote-card p {
+      margin-bottom: 0.5rem;
+    }
+
+    .quote-card span {
+      font-size: 0.78rem;
+      color: #047857;
+    }
+
+    /* BLOG */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .blog-card {
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.03);
+    }
+
+    .blog-card h3 {
+      font-size: 0.96rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .blog-meta {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .blog-card p {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .blog-card a.read-more {
+      font-size: 0.8rem;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* GALLERY */
+    .gallery-shell {
+      background: #f9fafb;
+      border-radius: var(--radius-xl);
+      padding: 1.1rem 1rem;
+      border: 1px dashed rgba(148, 163, 184, 0.7);
+      text-align: center;
+    }
+
+    .gallery-placeholder {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-top: 0.4rem;
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 1.6rem;
+    }
+
+    .contact-card {
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      padding: 1.1rem 1rem;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.05);
+    }
+
+    .contact-row {
+      font-size: 0.86rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      gap: 0.4rem;
+    }
+
+    .contact-row span.label {
+      font-weight: 600;
+      min-width: 70px;
+    }
+
+    .contact-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    form {
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    label {
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    input, textarea {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid rgba(148, 163, 184, 0.9);
+      padding: 0.55rem 0.7rem;
+      font-size: 0.86rem;
+      outline: none;
+      background: #f9fafb;
+    }
+
+    input:focus, textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 1px rgba(45, 212, 191, 0.3);
+      background: #ffffff;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(148, 163, 184, 0.3);
+      padding: 1.1rem 0 1.4rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      background: rgba(248, 250, 252, 0.9);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .footer-links a {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      text-underline-offset: 3px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-grid,
+      .program-layout,
+      .org-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding-top: 2.2rem;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .blog-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 780px) {
+      nav {
+        position: absolute;
+        inset: 100% 0 auto 0;
+        background: rgba(255, 255, 255, 0.97);
+        border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+        padding: 0.7rem 1.25rem 0.9rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+        transform-origin: top;
+        transform: scaleY(0.0);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.14s ease-out, opacity 0.14s ease-out;
+      }
+
+      nav.nav-open {
+        transform: scaleY(1);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .header-inner {
+        padding: 0.7rem 0;
+      }
+
+      .header-cta {
+        display: none;
+      }
+
+      .mobile-nav-toggle {
+        display: inline-flex;
+      }
+
+      .cards-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <header>
+      <div class="container header-inner">
+        <a href="#top" class="brand">
+          <div class="brand-logo">
+            <!-- Replace with your real logo <img src="path/to/logo.png" alt="Ntlafatso logo" /> -->
+            <span>N</span>
+          </div>
+          <div class="brand-text">
+            <h1>Ntlafatso Consulting</h1>
+            <p>My Next Chapter · Life after work</p>
+          </div>
+        </a>
+
+        <nav id="main-nav">
+          <a href="#program">Beekeeping Program</a>
+          <a href="#organizations">For Organizations</a>
+          <a href="#blog">Blog</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="header-cta">
+          <div class="pill">
+            <span class="pill-dot"></span>
+            <span>Now enrolling</span>
+          </div>
+          <a href="#contact" class="btn btn-primary">
+            Book a conversation
+          </a>
+        </div>
+
+        <button class="mobile-nav-toggle" aria-label="Toggle navigation" id="nav-toggle">
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <div class="hero-kicker">
+              <span class="hero-kicker-tag">My Next Chapter</span>
+              <span>Practical skills for life after employment</span>
+            </div>
+            <h2>
+              Prepare for retirement with <span class="accent">real, usable skills</span> — not just a payout.
+            </h2>
+            <p class="lead">
+              Ntlafatso helps people leaving formal employment design their next chapter through practical skills like beekeeping — for purpose, health, and additional income.
+            </p>
+            <div class="hero-actions">
+              <a href="#program" class="btn btn-primary">Explore Beekeeping Program</a>
+              <a href="#organizations" class="btn btn-ghost">Info for HR & Employers</a>
+            </div>
+            <div class="hero-footnote">
+              <span class="dot"></span>
+              <span>We don’t handle pensions or sell financial products — we build skills and confidence.</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="hero-card">
+              <div class="hero-card-tag">
+                <span class="bee-emoji">🐝</span>
+                My Next Chapter: Beekeeping
+              </div>
+              <h3>From “I had a job” to “I have a livelihood.”</h3>
+              <p>
+                Learn how to start small with 1–3 hives, care for bees safely, harvest honey, and sell it in your community — at a pace that supports your health and lifestyle.
+              </p>
+
+              <div class="hero-metrics">
+                <div class="metric">
+                  <span class="value">Low impact</span>
+                  <span class="label">Gentle work that fits aging bodies.</span>
+                </div>
+                <div class="metric">
+                  <span class="value">Scalable</span>
+                  <span class="label">Grow from home use to side income.</span>
+                </div>
+              </div>
+
+              <div class="program-note">
+                Designed for people 3–10 years from retirement, early retirees, and those planning a life beyond the office.
+              </div>
+
+              <div class="hero-highlight"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROGRAM: BEEKEEPING -->
+      <section id="program">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">My Next Chapter: Beekeeping</div>
+            <h2 class="section-title">A practical pathway into your next livelihood.</h2>
+            <p class="section-description">
+              Beekeeping is well suited to late-career adults: it’s gentle, meaningful, land-friendly, and can support both household needs and additional income.
+            </p>
+          </div>
+
+          <div class="program-layout">
+            <div>
+              <span class="badge">What you’ll gain</span>
+              <div class="cards-grid" style="margin-bottom: 1.1rem;">
+                <div class="card">
+                  <h3>Practical skills</h3>
+                  <p>Understand equipment, hive placement, basic bee behaviour, and safe handling — no previous experience required.</p>
+                </div>
+                <div class="card">
+                  <h3>Life structure & purpose</h3>
+                  <p>Replace “office routine” with a new rhythm aligned to nature, seasons, and meaningful work.</p>
+                </div>
+                <div class="card">
+                  <h3>Income possibilities</h3>
+                  <p>Learn how honey and bee products can become a small but real contribution to your monthly income.</p>
+                </div>
+              </div>
+
+              <h3 style="font-size: 0.95rem; margin-bottom: 0.2rem;">Program outline (example 6-session journey)</h3>
+              <ul class="program-list">
+                <li><strong>Session 1:</strong> Who will I be after work? Designing your next chapter.</li>
+                <li><strong>Session 2:</strong> Introduction to bees, hives & tools.</li>
+                <li><strong>Session 3:</strong> Setting up your first hive & attracting bees.</li>
+                <li><strong>Session 4:</strong> Caring for your bees through the seasons.</li>
+                <li><strong>Session 5:</strong> Harvesting & bottling honey simply and safely.</li>
+                <li><strong>Session 6:</strong> Sharing and selling your honey — pricing, stories, and simple markets.</li>
+              </ul>
+
+              <p class="program-note">
+                The program can be offered as a series of short sessions, a compact 1–2 day workshop, or a blended journey with follow-up support.
+              </p>
+            </div>
+
+            <div>
+              <div class="program-card">
+                <h3>For HR & Employee Wellness Teams</h3>
+                <p>
+                  This program does not replace your pension fund training — it completes it. While funds explain payouts and options, we help employees build a skill they can live with and live from.
+                </p>
+
+                <div class="program-stats">
+                  <div class="metric" style="background:#fffbeb;border-style:solid;border-color:#fed7aa;">
+                    <span class="value">Add-on benefit</span>
+                    <span class="label">A unique retirement gift from the employer.</span>
+                  </div>
+                  <div class="metric" style="background:#fefce8;border-style:solid;border-color:#fee2e2;">
+                    <span class="value">Wellbeing</span>
+                    <span class="label">Supports mental, social & financial wellbeing.</span>
+                  </div>
+                </div>
+
+                <div style="margin-top: 0.9rem; display:flex; flex-wrap:wrap; gap:0.4rem;">
+                  <span class="pill-small">On-site or off-site</span>
+                  <span class="pill-small">Group or small cohorts</span>
+                  <span class="pill-small">3–10 years to retirement</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- FOR ORGANIZATIONS -->
+      <section id="organizations">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">For organizations</div>
+            <h2 class="section-title">A different kind of retirement support for your staff.</h2>
+            <p class="section-description">
+              Instead of only preparing employees to exit your payroll, you can help them step into the next phase of life with dignity, skills, and a sense of direction.
+            </p>
+          </div>
+
+          <div class="org-grid">
+            <div class="org-card">
+              <h3 style="font-size:1rem; margin-bottom:0.4rem;">Why employers choose this program</h3>
+              <ul class="org-list">
+                <li>It complements, rather than competes with, existing pension fund training.</li>
+                <li>It supports mental health and adjustment during the last years of service.</li>
+                <li>It offers something concrete and memorable as a retirement benefit.</li>
+                <li>It can be aligned with your wellness and ESG strategies.</li>
+                <li>It shows genuine care for staff beyond their last payslip.</li>
+              </ul>
+
+              <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.6rem;">
+                We can customise the delivery format and depth to suit your staff profile, time constraints, and budget.
+              </p>
+
+              <a href="#contact" class="btn btn-primary" style="margin-top:0.3rem;">
+                Talk to us about a staff cohort
+              </a>
+            </div>
+
+            <div>
+              <div class="card">
+                <h3>Example delivery options</h3>
+                <p>
+                  A few ways organizations typically structure the program:
+                </p>
+                <ul class="program-list" style="margin-top:0.4rem;">
+                  <li><strong>Half-day taster:</strong> Introduction to life after work & beekeeping.</li>
+                  <li><strong>3-session series:</strong> Identity, beekeeping overview, and income potential.</li>
+                  <li><strong>Full journey:</strong> 6-session blended program with practical follow-up.</li>
+                </ul>
+              </div>
+
+              <div class="card" style="margin-top:0.7rem;">
+                <h3>Future tracks under “My Next Chapter”</h3>
+                <p style="margin-bottom:0.4rem;">
+                  In time, organizations will be able to choose from several pathways:
+                </p>
+                <ul class="program-list">
+                  <li>My Next Chapter: Crafting for income</li>
+                  <li>My Next Chapter: Food preservation & home products</li>
+                  <li>My Next Chapter: Backyard chickens</li>
+                </ul>
+                <p class="program-note">
+                  Beekeeping is our current flagship; additional tracks will follow.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- BLOG -->
+      <section id="blog">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">Blog</div>
+            <h2 class="section-title">Reflections on life after work, bees, and new beginnings.</h2>
+            <p class="section-description">
+              Short, honest pieces to help people imagine — and then build — their next chapter with courage and curiosity.
+            </p>
+          </div>
+
+          <div class="blog-grid">
+            <article class="blog-card">
+              <h3>Why your next chapter needs a skill, not just a payout</h3>
+              <div class="blog-meta">Retirement · Transition · Purpose</div>
+              <p>
+                A pension can carry you, but a skill keeps you awake inside your own life. This piece explores why practical, gentle skills like beekeeping matter so much after formal employment ends.
+              </p>
+              <a href="#" class="read-more">Read more (coming soon)</a>
+            </article>
+
+            <article class="blog-card">
+              <h3>What bees taught me about slowing down — without stopping</h3>
+              <div class="blog-meta">Beekeeping · Health · Rhythm</div>
+              <p>
+                Beekeeping invites you into a quieter, slower way of working that still feels productive and alive. Perfect for bodies that want movement without strain.
+              </p>
+              <a href="#" class="read-more">Read more (coming soon)</a>
+            </article>
+
+            <article class="blog-card">
+              <h3>Designing a retirement that fits the Basotho reality</h3>
+              <div class="blog-meta">Context · Family · Community</div>
+              <p>
+                Retirement in Lesotho is shaped by land, extended family, and a changing economy. Here we talk about planning a next chapter that honours all of that.
+              </p>
+              <a href="#" class="read-more">Read more (coming soon)</a>
+            </article>
+          </div>
+
+          <p class="contact-note" style="margin-top:1rem;">
+            As you’re ready, you can replace these summaries with full articles, link to a separate blog page, or integrate a blog engine later.
+          </p>
+        </div>
+      </section>
+
+      <!-- GALLERY (placeholder) -->
+      <section id="gallery">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">Gallery</div>
+            <h2 class="section-title">A glimpse into My Next Chapter: Beekeeping.</h2>
+            <p class="section-description">
+              Photos of hives, honey, workshops, and the people stepping into their next chapter — coming as we document the journey.
+            </p>
+          </div>
+
+          <div class="gallery-shell">
+            <p><strong>Coming soon.</strong></p>
+            <p class="gallery-placeholder">
+              As programs run and hives multiply, this space will grow into a visual story: hives at the foot of the hills, smiling retirees in bee suits, first jars of honey, and quiet, beautiful work in progress.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">About Ntlafatso</div>
+            <h2 class="section-title">We help people grow into their next chapter with purpose.</h2>
+            <p class="section-description">
+              Ntlafatso means “improvement” or “growth”. We exist to support people as they move from formal employment into a new season of meaningful work, contribution, and wellbeing.
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <div>
+              <p style="font-size:0.9rem; margin-bottom:0.7rem;">
+                Our work is grounded in three simple beliefs:
+              </p>
+              <ul class="program-list">
+                <li><strong>Retirement is not an ending.</strong> It is a transition into a new identity.</li>
+                <li><strong>People need real skills.</strong> Not everyone wants to “just rest” — many want to build, grow, and contribute.</li>
+                <li><strong>Support must fit our context.</strong> We design with the Basotho reality in mind: land, extended family, and evolving economic pressures.</li>
+              </ul>
+
+              <p style="font-size:0.9rem; margin-top:0.7rem;">
+                Ntlafatso is led by <strong>Hapiloe Molapo</strong>, drawing together years of experience in employee benefits, healthcare financing, and beekeeping through The Honey Shop, to offer something both practical and deeply human.
+              </p>
+            </div>
+
+            <div class="quote-card">
+              <p>
+                “Retirement shouldn’t feel like falling off a cliff. It should feel like turning a page into a chapter you have helped to write — with purpose, rhythm, and skills that keep you alive inside.”
+              </p>
+              <span>— Hapiloe, Founder of Ntlafatso</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">Contact</div>
+            <h2 class="section-title">Let’s talk about your next chapter — or your staff’s.</h2>
+            <p class="section-description">
+              Use the form to start a conversation about running a cohort for your organization or joining an upcoming group as an individual.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-card">
+              <div class="contact-row">
+                <span class="label">Phone:</span>
+                <span>+266 6305 6112</span>
+              </div>
+              <div class="contact-row">
+                <span class="label">Email:</span>
+                <span><a href="mailto:ntlafatsoconsultants@gmail.com">ntlafatsoconsultants@gmail.com</a></span>
+              </div>
+              <div class="contact-row">
+                <span class="label">Location:</span>
+                <span>Maseru, Lesotho</span>
+              </div>
+              <p class="contact-note">
+                Email is currently the best way to reach us for program details, bookings, and partnership conversations.
+              </p>
+            </div>
+
+            <div>
+              <form action="mailto:ntlafatsoconsultants@gmail.com" method="post" enctype="text/plain">
+                <div>
+                  <label for="name">Name</label>
+                  <input id="name" name="name" type="text" required />
+                </div>
+                <div>
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" required />
+                </div>
+                <div>
+                  <label for="type">I’m contacting you as…</label>
+                  <input id="type" name="type" type="text" placeholder="HR / Employer / Individual / Other" />
+                </div>
+                <div>
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" placeholder="Tell us a little about your situation or the group you have in mind."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="margin-top:0.4rem;">
+                  Send message
+                </button>
+                <p class="contact-note">
+                  This simple form uses your device’s email program to send the message. If nothing opens when you click “Send”, people can still email you directly using the address above.
+                </p>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <div>© <span id="year"></span> Ntlafatso Consulting. My Next Chapter.</div>
+        <div class="footer-links">
+          <a href="#program">Beekeeping Program</a>
+          <a href="#organizations">For Organizations</a>
+          <a href="#blog">Blog</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile nav
+    const navToggle = document.getElementById("nav-toggle");
+    const nav = document.getElementById("main-nav");
+
+    navToggle.addEventListener("click", () => {
+      nav.classList.toggle("nav-open");
+    });
+
+    // Close nav when clicking a link on mobile
+    nav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("nav-open");
+      });
+    });
+  </script>
+</body>
+</html>
