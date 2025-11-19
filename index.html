@@ -939,71 +939,146 @@
 
     <!-- FOOTER -->
     <footer id="contact" class="site-footer">
-      <div class="footer-inner">
-        <div>
-          <h3 class="footer-title">Start the conversation</h3>
-          <p class="footer-sub">
-            Wherever you are in the world – if you are entering a new season, a
-            slower season, or a more intentional season, Ntlafatso Consultants
-            offers a grounded, gentle space to think, plan and learn.
-          </p>
-          <p class="footer-sub">
-            We don’t sell financial or insurance products on this platform.
-            Instead, we focus on slow living, skills, next-chapter transitions
-            and, for organisations, pre-retirement and wellness support for
-            their people.
-          </p>
-        </div>
-        <div class="footer-contact">
-          <p><strong>Contact Hapiloe Molapo</strong></p>
-          <p>Maseru, Lesotho (working with clients worldwide)</p>
-          <p>
-            Email:
-            <a
-              href="mailto:ntlafatsoconsultants@gmail.com"
-              style="color: #e5e7eb; text-decoration: underline;"
-              >ntlafatsoconsultants@gmail.com</a
-            >
-          </p>
-          <p>Phone / WhatsApp: +266 6305 6112</p>
-          <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #9ca3af;">
-            You can mention whether you’re interested in beekeeping, general
-            next-chapter support, slow-living guidance, or a group session for
-            your organisation.
-          </p>
+  <div class="footer-inner">
+    <div>
+      <h3 class="footer-title">Start the conversation</h3>
+      <p class="footer-sub">
+        Wherever you are in the world – if you are entering a new season, a
+        slower season, or a more intentional season, Ntlafatso Consultants
+        offers a grounded, gentle space to think, plan and learn.
+      </p>
+      <p class="footer-sub">
+        We focus on slow living, skills, next-chapter transitions and, for
+        organisations, pre-retirement and wellness support for their people.
+      </p>
+    </div>
 
-          <div class="footer-company">
-            <div class="footer-company-main">
-              <strong>Ntlafatso Management Consultants (PTY) LTD</strong>
-              <span>Company Registration: D2025/3058 | TIN: 200091880-1</span>
-              <span>
-               Because Your Next Chapter Should Fit Your Life. 
-              </span>
-              <span>
-                Website:
-                <a
-                  href="https://www.ntlafatsoconsultants.com"
-                  style="color: #e5e7eb; text-decoration: underline;"
-                  >www.ntlafatsoconsultants.com</a
-                >
-              </span>
-            </div>
-            <div class="footer-qr">
-              <!-- Optional QR code image -->
-              <!-- Replace `ntlafatso-qr.png` with your QR file name, or remove this block if not needed -->
-              <img
-                src="ntlafatso-qr.png"
-                alt="Ntlafatso Consultants QR code"
-                onerror="this.style.display='none';"
-              />
-            </div>
+    <div class="footer-contact">
+      <!-- CONTACT FORM -->
+      <form
+        action="https://formspree.io/f/xpwbdwop"
+        method="POST"
+        style="background: rgba(15,23,42,0.5); padding: 12px 12px; border-radius: 12px; border: 1px solid #4b5563;"
+      >
+        <!-- Honeypot (spam protection) -->
+        <input
+          type="text"
+          name="_gotcha"
+          style="display:none"
+          tabindex="-1"
+          autocomplete="off"
+        />
+
+        <p style="margin: 0 0 0.5rem 0; font-weight: 600; font-size: 0.9rem;">
+          Send a message
+        </p>
+
+        <div style="display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:0.4rem;">
+          <div style="flex:1 1 150px;">
+            <label style="font-size:0.75rem; display:block; margin-bottom:2px;">Name</label>
+            <input
+              type="text"
+              name="name"
+              required
+              style="width:100%; padding:0.4rem 0.5rem; border-radius:8px; border:1px solid #4b5563; background:#020617; color:#e5e7eb; font-size:0.85rem;"
+            />
+          </div>
+          <div style="flex:1 1 150px;">
+            <label style="font-size:0.75rem; display:block; margin-bottom:2px;">Email</label>
+            <input
+              type="email"
+              name="_replyto"
+              required
+              style="width:100%; padding:0.4rem 0.5rem; border-radius:8px; border:1px solid #4b5563; background:#020617; color:#e5e7eb; font-size:0.85rem;"
+            />
           </div>
         </div>
+
+        <div style="margin-bottom:0.4rem;">
+          <label style="font-size:0.75rem; display:block; margin-bottom:2px;">Country / City (optional)</label>
+          <input
+            type="text"
+            name="location"
+            style="width:100%; padding:0.4rem 0.5rem; border-radius:8px; border:1px solid #4b5563; background:#020617; color:#e5e7eb; font-size:0.85rem;"
+          />
+        </div>
+
+        <div style="margin-bottom:0.4rem;">
+          <label style="font-size:0.75rem; display:block; margin-bottom:2px;">I'm reaching out about</label>
+          <select
+            name="topic"
+            style="width:100%; padding:0.4rem 0.5rem; border-radius:8px; border:1px solid #4b5563; background:#020617; color:#e5e7eb; font-size:0.85rem;"
+          >
+            <option value="Individual next chapter">
+              My own next chapter / slow living
+            </option>
+            <option value="Beekeeping">
+              My Next Chapter: Beekeeping
+            </option>
+            <option value="Organisation pre-retirement">
+              Pre-retirement or wellness session for an organisation
+            </option>
+            <option value="Other">Something else</option>
+          </select>
+        </div>
+
+        <div style="margin-bottom:0.5rem;">
+          <label style="font-size:0.75rem; display:block; margin-bottom:2px;">Message</label>
+          <textarea
+            name="message"
+            rows="4"
+            required
+            style="width:100%; padding:0.4rem 0.5rem; border-radius:8px; border:1px solid #4b5563; background:#020617; color:#e5e7eb; font-size:0.85rem; resize:vertical;"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="btn"
+          style="padding:0.5rem 1.2rem; font-size:0.85rem; border-radius:999px;"
+        >
+          Send Message
+        </button>
+
+        <p style="margin-top:0.4rem; font-size:0.75rem; color:#9ca3af;">
+          This form sends directly to <strong>ntlafatsoconsultants@gmail.com</strong>.
+          You can also email
+          <a href="mailto:ntlafatsoconsultants@gmail.com" style="color:#e5e7eb; text-decoration:underline;">
+            ntlafatsoconsultants@gmail.com
+          </a>
+          or WhatsApp +266 6305 6112.
+        </p>
+      </form>
+
+      <!-- Company details (kept simple so it matches whatever you had) -->
+      <div class="footer-company" style="margin-top:1rem; border-top:1px solid rgba(55,65,81,0.6); padding-top:0.7rem;">
+        <div style="font-size:0.8rem; color:#d1d5db;">
+          <strong>Ntlafatso Management Consultants (PTY) LTD</strong><br>
+          Company Registration: D2025/3058 &nbsp;|&nbsp; TIN: 200091880-1<br>
+          <span>
+            Website:
+            <a href="https://www.ntlafatsoconsultants.com" style="color:#e5e7eb; text-decoration:underline;">
+              www.ntlafatsoconsultants.com
+            </a>
+          </span>
+        </div>
       </div>
-      <div class="footer-strip">
-        © <span id="year"></span> Ntlafatso Consultants. All rights reserved.
-      </div>
-    </footer>
+    </div>
+  </div>
+
+  <div class="footer-strip">
+    © <span id="year"></span> Ntlafatso Consultants. All rights reserved.
+  </div>
+</footer>
+
+<script>
+  // dynamic year if you don't already have this
+  const yearEl = document.getElementById('year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear().toString();
+  }
+</script>
+
   </div>
 
   <script>
